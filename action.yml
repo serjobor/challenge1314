@@ -1,1 +1,11 @@
-## в Процессе
+version: '3.8'
+services:
+  static-website:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./site:/usr/share/nginx/html
+    restart: always
+    labels:
+      - "description=Static Website"
